@@ -1,0 +1,71 @@
+﻿@model FinalProject1.Models.car
+@{
+    Layout = null;
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    
+    <title>Add</title>
+
+</head>
+<body>
+    <div>
+        @Html.ActionLink("Go to list", "IndexCar", null, new { @class = "btn btn-primary" })
+        <br /> <br />
+        @using (Html.BeginForm("UpdateCar", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.CarType)
+            @Html.TextBoxFor(m => m.CarType, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.CarColor)
+            @Html.TextBoxFor(m => m.CarColor, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Availability)
+            @Html.TextBoxFor(m => m.Availability, new { @class = "form-control" })
+        </div>
+
+
+        <div>
+            @Html.LabelFor(m => m.NumOfChair)
+            @Html.TextBoxFor(m => m.NumOfChair, new { @class = "form-control" })
+        </div>
+
+        <div>
+            @Html.LabelFor(m => m.From)
+            @Html.TextBoxFor(m => m.From, new { @class = "form-control" })
+        </div>
+
+        
+
+        <div>
+            @Html.LabelFor(m => m.To)
+            @Html.TextBoxFor(m => m.To, new { @class = "form-control" })
+        </div>
+        <div>
+            @Html.LabelFor(m => m.CarModel)
+            @Html.TextBoxFor(m => m.CarModel, new { @class = "form-control" })
+        </div>
+
+        <div>
+            @Html.LabelFor(m => m.RentAmountOfCar)
+            @Html.TextBoxFor(m => m.RentAmountOfCar, new { @class = "form-control" })
+        </div>
+
+        <br />
+
+        <input type="submit" class="btn btn-success" value="submit" />
+}
+    </div>
+</body>
+</html>

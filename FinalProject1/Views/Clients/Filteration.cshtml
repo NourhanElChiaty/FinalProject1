@@ -1,0 +1,90 @@
+﻿
+@{
+    ViewBag.Title = "Filteration";
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
+}
+
+<h2>Filteration</h2>
+
+
+
+
+
+
+
+@model IEnumerable<FinalProject1.Models.car>
+
+<br />
+<br />
+@using (Html.BeginForm("Filteration", "Clients", FormMethod.Get))
+{
+    <div>
+        Car Type @Html.TextBox("SearchingType")
+        Car Color @Html.TextBox("color")
+        Car Model @Html.TextBox("Model")
+        Car rentAmount @Html.TextBox("rentAmount")
+       
+
+
+        <input id="submit4" type="submit" value="Search" />
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+<table class="table table-striped">
+    <thead>
+        <tr>
+           
+            <th>Type</th>
+            <th>Availabilty</th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Count() == 0)
+        {
+            <tr>
+                <td colspan="3">
+                    No match item
+                </td>
+            </tr>
+        }
+        else
+        {
+            foreach (var item in Model)
+            {
+            <tr>
+                
+                <td>@item.CarType</td>
+                <td>@item.Availability</td>
+
+
+                <td> @Html.ActionLink("Show Details", "Details", new { id=item.ID},FormMethod.Get)</td>
+
+            </tr>
+            }
+        }
+    </tbody>
+</table>
+
+
+
+
+
+

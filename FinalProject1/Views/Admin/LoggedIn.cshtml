@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "LoggedIn";
+}
+
+@if (Session["ID"] != null)
+{
+    <h4>Hello Admin</h4>
+}
+<td>
+    @Html.ActionLink("Add User", "AddUser") |
+    @Html.ActionLink("Show All User", "IndexUser")
+    <br />
+    <br />
+    @Html.ActionLink("Add Car", "AddCar") |
+    @Html.ActionLink("Show All Cars", "IndexCar")|
+    @Html.ActionLink("Show Report", "report_pdf")
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    @Html.ActionLink("LogouT", "LogouT")
+</td>

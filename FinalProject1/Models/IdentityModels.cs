@@ -20,6 +20,9 @@ namespace FinalProject1.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        public DbSet<client> clients { get; set; }
+        public DbSet<admin> admins { get; set; }
+        public DbSet<car> cars { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {

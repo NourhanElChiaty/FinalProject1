@@ -1,0 +1,33 @@
+﻿@model FinalProject1.Models.car
+@{
+    Layout = null;
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+ 
+    <title>Update Image</title>
+   
+</head>
+<body>
+    <div>
+        @Html.ActionLink("Go to list", "IndexCar", null, new { @class = "btn btn-primary" })
+        <br /> <br />
+        @using (Html.BeginForm("UpdateImage", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+            <div>
+                @Html.LabelFor(m => m.CarImage)
+                <input type="file" name="upload" />
+            </div>
+
+            <br />
+
+            <input type="submit" class="btn btn-success" value="submit" />
+        }
+    </div>
+</body>
+</html>

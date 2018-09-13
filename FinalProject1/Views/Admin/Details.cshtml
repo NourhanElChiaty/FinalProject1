@@ -1,0 +1,102 @@
+﻿@model  FinalProject1.Models.car
+
+@{
+    Layout = null;
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>car</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.CarType)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.CarType)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.CarColor)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.CarColor)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.NumOfChair)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NumOfChair)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.From)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.From)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.To)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.To)
+            </dd>
+
+
+
+            <dt>
+                @Html.DisplayNameFor(model => model.CarModel)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.CarModel)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.RentAmountOfCar)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.RentAmountOfCar)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Availability)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Availability)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.CarImage)
+            </dt>
+
+            <dd>
+                <img src="~/Uploads/@Html.DisplayFor(Model=>Model.CarImage)"
+                     class="thumbnail"
+                     style="width:200px;height:200px;" />
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Back to List", "IndexCar")
+    </p>
+</body>
+</html>
